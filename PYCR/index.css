@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background: green;
+    flex-direction: column;
+}
+
+#game-screen {
+    border: 2px solid black;
+    background: green;
+    width: 100%;
+    height: 100%
+}
+
+.btn-row {
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap: 5px;
+    margin: 10px;
+    flex-grow: 10;
+    
+
+
+}
+
+
+.btn {
+    background-color: darkmagenta;
+    border: 1px magenta;
+    border-radius: 5px;
+    padding: 5px, 10px;
+    outline: none;
+    color: white;
+}
+
+
+img{
+    display: none;
+
+}
