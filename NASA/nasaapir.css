@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#title {
+    font-size: 2vw;
+}
+
+#content-container {
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+#main-pcture-container {
+
+
+}
+
+
+
+#thumbnail-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#thumbnails {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#main-image {
+    width: 84.5vw;
+    height: 100vh;
+}
+
+#main-description {
+    padding: 1vw;
+    width: 84.5vw;
+    font-size: 1vw;
+}
+
+.thumb {
+    width: 11vw;
+    height: 13.8vh;
+}

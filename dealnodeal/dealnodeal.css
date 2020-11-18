@@ -1,0 +1,74 @@
+body {
+    background-color: #FEEDEB;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#game-container {
+    display: flex;
+
+}
+#box-container {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 140px 140px 140px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+#options-container {
+    border: solid 20px #FEEDEB;
+    background-color: #FEEDEB;
+    width: 450;
+    height: 440;
+    flex-basis: 100%;
+}
+.box-top {
+    background-color: white;
+    border: solid 10px #E3170A;
+    height: 60px;
+    width: 130px;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+}
+.box-bot {
+    background-color: #E3170A;
+    border: solid 10px #E3170A;
+    text-align: center;
+    height: 40px;
+    width: 130px;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.button {
+    width: 400px;
+    height: 100px;
+    border: solid 10px #E3170A;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px;
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin:10px;
+
+}
+.offer-container {
+    vertical-align: middle;
+    width: 400px;
+    height: 100px;
+    margin 10px;
+
+}
+#offer {
+
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+}
+#final-score {
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+}
+

@@ -1,0 +1,68 @@
+HTML Pages
+    Welcome
+        Welcome Message
+        Bridge Partners
+        Pick your player
+
+    Board
+        Player Cards
+        Table Cards
+        Trumps
+        Tricks
+        ?Contract (Future Development)
+        played Cards
+        
+    Player
+        Cards
+        Table Cards
+
+        for each
+        Player 1
+
+        Player 2
+
+        Player 3
+
+        Player 4
+
+
+High Level Overview:
+
+Match Opens
+Welcome Screen
+Each Player Selects Player Number
+Move to Game Screen
+Start new Set
+    Deal Cards
+        [Players Bid]
+    Info Required - 1st Player, Table Player,
+    
+    First Round
+        1st Player Turn
+        Display Table Cards
+        2nd 3rd and 4th player turns
+        Detrmine result of Round
+        Update first player for next round
+    rounds 2 to 13
+        each player has a turn
+        determine results
+        update first player
+    End of set
+        Update Tricks
+        Start new set
+
+    
+    Player Turn
+        Read Game File
+        If Player Turn is you:
+            Select Card to Play
+        Update File
+Match Closes
+
+Board Page:
+    Read Game File
+    Update Display
+
+Player Page:
+    Read Game File
+    Check to see if your turn

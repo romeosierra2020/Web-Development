@@ -1,0 +1,192 @@
+.image-logo{
+    width: 50%;
+}
+
+.small-image{
+    height: 30px;
+    margin: 10px;
+}
+ #header-container{
+     display: flex;
+     justify-items: center;
+     align-items: center;
+ }
+#header-right{
+    align-content: center;
+}
+#header-left{
+
+}
+
+#main-content{
+    background: #E01C70;
+}
+
+
+.btn{
+    margin: 2rem 4rem 2rem 4rem;
+    font-size: 1.6rem;
+    font-weight: l;
+    text-decoration: none;
+    color: #E01C70;
+    background-color: #FFFFFF;
+    border: solid #000000 4px;
+    border-radius: 2rem;
+    padding: .4rem;
+}
+ form{
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-style: oblique;
+     font-weight: bold;
+     background: #FFFFFF;
+     margin:2rem 2rem 2rem 2rem;
+     padding: 2rem 2rem 2rem 2rem;
+     font-size: 1.6rem;
+     
+ }
+ #questions{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto repeat(9);
+    padding: 1.5rem;
+    margin: 1.5rem;
+ }
+
+.solutions-image{
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    border: 2rem 2rem 2rem 2rem;
+}
+#peripheral{
+    grid-column-start: 1;
+}
+#central{
+    grid-column-start: 1;
+}
+#ability{
+    grid-column-start: 1;
+}
+#location{
+    grid-column-start: 1;
+}
+#input{
+    grid-column-start: 1;
+}
+#output{
+    grid-column-start: 1;
+}
+#internet{
+    grid-column-start: 1;
+}
+#device{
+    grid-area: 1/2/2/2;
+}
+#os{
+    grid-area: 2/2/3/2;
+}
+#tasks{
+    grid-area: 3/ 2/ 9/ 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#alert-banner{
+    background: #EC3528;
+    width: 100%;
+    height: 150px;
+}
+
+#alert-banner-inner {
+    display: flex;
+    grid-template-columns: 16% 44% 12% 12% 16%;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: auto;
+    justify-content: space-evenly;
+    font-size: 14px;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    grid-column:2 / 2;
+    font-style: normal;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    flex-basis: 70%;
+    align-self: center;
+    margin: 1rem 10rem 1rem 10rem;
+}
+
+.btn {
+    margin: 1rem 10rem 1rem 10rem;
+    height: 2.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #e01c70;
+    background-color: #fff;
+    border: 2px solid #fff;
+    font-size: 1.2rem;
+    line-height: normal;
+    text-decoration: none;
+    padding-top: 0.9rem;
+    padding-right: 2rem;
+    padding-bottom: 0.8rem;
+    padding-left: 2rem;
+    transition: .2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    white-space: normal;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    align-self: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 40px;
+    user-select: none;
+    
+
+
+    background: #FFFFFF;
+    color: #EC3528;
+    height: 50px;
+    width: 140px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration-line: none;
+    border-radius: 25px;
+    text-align: center;
+    padding: auto;
+    line-height: 50px;
+    font-size: 20px;
+    grid-column: 4/4;
+    align-self: center;
+    font-style: normal;
+*/
+}
+form {
+    color: #000000;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-self: center;
+    margin: 1rem 10rem 1rem 10rem;
+}

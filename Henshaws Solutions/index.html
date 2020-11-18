@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Henshaws Solutions</title>
+</head>
+<body>
+    <Header>
+        <div id="header-container">
+                    <div id="header-left">
+                    <a id="henshaws-logo" href="https://henshaws.org.uk">
+                        <img class = "image-logo" src="images/HenshawsAltLogo-RGB.jpg" alt = "Henshaws"/>
+                    </a> 
+                    </div>
+                    <div id="header-right">
+                    <a href="https://twitter.com/Henshaws"><img class = "small-image" src="images/twitter logo.png"/></a> 
+
+                    <a href="https://facebook.com/Henshaws"> <img class = "small-image"src="images/facebook logo.png"/></a> 
+
+                    <a href="https://www.youtube.com/channel/UCduruJjJft51IfplqLfhD0Q"><img class = "small-image"src="images/facebook logo.png"/></a> 
+
+                    <a href="https://instagram.com/henshaws_uk"><img class = "small-image"src="images/instagram.png"/></a> 
+
+                    <a href="https://linkedin.com/company/henshaws/"><img class = "small-image"src="images/twitter logo.png"/></a> 
+                    </div>
+        </div>
+
+    </Header>
+    
+
+<div id = "main-content">
+    <br/>
+<form action="solutions.html" method="GET">
+    <button class = "btn" type="submit">Submit</button>
+    <button class = "btn" type="reset">Reset</button>
+    <div id="questions">
+
+        <div id = "peripheral">
+            Do you have any useful Peripheral Vision?<br/>
+            <label for="visionPeripheral"></label>
+            <input type="radio" name="visionPeripheral" value="yes" checked="checked"> Yes
+            <label for="visionPeripheral"></label>
+            <input type="radio" name="visionPeripheral" value="no" > No
+        </div>    
+        
+
+        <div id = "central">
+            Do you have any useful Central Vision?<br/>
+            <label for="visionCentral"></label>
+            <input type="radio" name="visionCentral" value="yes" checked="checked"> Yes
+            <label for="visionCentral"></label>
+            <input type="radio" name="visionCentral" value="no"> No
+        </div>    
+        
+
+        <label id = "ability"> 
+            How would you rate your Technical Ability?<br/>
+            <input type="radio" name="techLevel" value="None" checked="checked"> None
+            <input type="radio" name="techLevel" value="Basic"> Basic
+            <input type="radio" name="techLevel" value="Intermediate"> Intermediate
+            <input type="radio" name="techLevel" value="Advanced"> Advanced<br/>
+        </label>    
+        
+        <div id = "location">
+            Where would you like to use the solution?
+
+            <div>
+                <input type="checkbox" name="locationHome" id="locationHome" value="on">
+                <label for ="locationHome">Home</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="publicSeating" id="publicSeating" value ="on">
+                <label for ="publicSeating">Public area with seating and/or table</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="publicMobile" id="publicMobile" value="on">
+                <label for ="publicMobile">Public places on the move</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="awayHotel" id="awayHotel" value = "on">
+                <label for ="awayHotel">Staying away from home. e.g. Hotel</label>
+    
+            </div>
+
+    
+        </div>
+        <div id="input">
+            <br/>How would you like to control the device?<br/>
+            <div>
+                <input type="checkbox" name="controlTactile" id="controlTactile">
+                <label for ="controlTactile">Tactile Buttons/keyboard</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="controlTouchscreen" id="controlTouchscreen">
+                <label for ="controlTouchscreen">Touch Screen/Touch screen Keyboard</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="controlVoice" id="controlVoice">
+                <label for ="controlVoice">Voice Control</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="controlMouse" id="controlMouse">
+                <label for ="controlMouse">Mouse</label>  
+            </div>
+        </div>
+        <div id="output">
+            How would you like to recieve information from the device?
+            <div>
+                <input type="checkbox" name="outputAudio" id="outputAudio">
+                <label for ="outpuAudio">Audio</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="outputVisual" id="outputVisual">
+                <label for ="outPutvisual">Visual</label>
+    
+            </div>
+        </div>
+        <div id = "internet">
+            How would you connect to the internet?
+            <div>
+                <input type="checkbox" name="internetNone" id="internetNone">
+                <label for ="internetNone">No Internet Connection</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="internetPrivate" id="internetPrivate">
+                <label for ="internetPrivate">Private WiFi</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="internetPublic" id="internetPublic">
+                <label for ="internetPublic">Public WiFi connection</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="internetHotspot" id="InternetHotspot">
+                <label for ="internetHotspot">Mobile Phone Hotspot</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="internetDongle" id="internetDongle">
+                <label for ="internetDongle">Mobile Dongle</label>  
+            </div>          
+        </div>
+        <div id ="device">
+            What kind of Computing Device?
+            <div>
+                <input type="checkbox" name="deviceSmartphone" id="deviceSmartphone">
+                <label for ="deviceSmartphone">Smartphone</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="deviceTablet" id="deviceTablet">
+                <label for ="deviceTablet">Tablet</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="deviceDesktop" id="deviceDesktop">
+                <label for ="deviceDesktop">Desktop</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="deviceLaptop" id="deviceLaptop">
+                <label for ="deviceLaptop">Laptop</label>  
+            </div>
+        </div>
+        <div id = "os">
+            Which Operating System?
+            <div>
+                <input type="checkbox" name="osGoogle" id="osGoogle">
+                <label for ="osGoogle">Google Chromebook</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="osWindows" id="osWindows">
+                <label for ="osWindows">Windows</label>
+    
+            </div>
+            <div>
+                <input type="checkbox" name="osMac" id="osMac">
+                <label for ="osMac">Mac OS</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="osIOS" id="osIOS">
+                <label for ="osIOS">IOS</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="osAndroid" id="osAndroid">
+                <label for ="osAndroid">Android</label>  
+            </div>
+            <div>
+                <input type="checkbox" name="osFire" id="osFire">
+                <label for ="osFire">Fire</label>  
+            </div>
+        </div>
+    <div id="tasks">
+        Tasks
+        <div>
+            <input type="checkbox" name="productLabels" id="productLabels">
+            <label for ="productLabels">Reading Product Labels</label>
+        </div>
+        <div>
+            <input type="checkbox" name="correspondence" id="correspondence">
+            <label for ="correspondence">Reading Correspondence</label>
+        </div>
+        <div>
+            <input type="checkbox" name="booksMainstream" id="booksMainstream">
+            <label for ="booksMainstream">Reading Mainstream Books</label>
+        </div>
+        <div>
+            <input type="checkbox" name="booksSpecialist" id="booksSpecialist">
+            <label for ="booksSpecialist">Reading Specialist Books</label>
+        </div>
+        <div>
+            <input type="checkbox" name="sellByDates" id="sellByDates">
+            <label for ="sellByDates">Reading Sellby and Best Before dates</label>
+        </div>
+        <div>
+            <input type="checkbox" name="handsfreeReading" id="handsfreeReading">
+            <label for ="handsfreeReading">Reading with both hands free</label>
+        </div>
+        <div>
+            <input type="checkbox" name="locatngItems" id="locatingItems">
+            <label for ="locatingItems">Locating Items</label>
+        </div>
+        <div>
+            <input type="checkbox" name="calendar" id="calendar">
+            <label for ="calendar">Maintaining a calendar</label>
+        </div>
+        <div>
+            <input type="checkbox" name="notesReminders" id="notesReminders">
+            <label for ="notesReminders">recording notes and Reminders</label>
+        </div>
+        <div>
+            <input type="checkbox" name="weather" id="weather">
+            <label for ="weather">Fnding out the weather</label>
+        </div>
+        <div>
+            <input type="checkbox" name="news" id="news">
+            <label for ="news">Finding out the News</label>
+        </div>
+        <div>
+            <input type="checkbox" name="generalInformation" id="generalInformation">
+            <label for ="generalInformation">Finding out General Information</label>
+        </div>
+        <div>
+            <input type="checkbox" name="eMails" id="emails">
+            <label for ="emails">Sending and recieving Emails</label>
+        </div>
+        <div>
+            <input type="checkbox" name="routePlanning" id="routePlanning">
+            <label for ="routePlanning">Planning a route</label>
+        </div>
+        <div>
+            <input type="checkbox" name="publicTransport" id="publicTransport">
+            <label for ="publicTransport">Journey Planning using Public Transport</label>
+        </div>
+        <div>
+            <input type="checkbox" name="audioCalls" id="audioCalls">
+            <label for ="audioCalls">Making and receiving Audio Calls</label>
+        </div>
+        <div>
+            <input type="checkbox" name="videoCalls" id="videoCalls">
+            <label for ="videoCalls">Making and recieving Video Calls</label>
+        </div>
+        <div>
+            <input type="checkbox" name="sendSMS" id="sendSMS">
+            <label for ="sendSMS">Sending SMS messages (Text Messages)</label>
+        </div>
+        <div>
+            <input type="checkbox" name="readSMS" id="readSMS">
+            <label for ="readSMS">Reading SMS messages (Text Messages)</label>
+        </div>
+        <div>
+            <input type="checkbox" name="productIdentification" id="productIdentification">
+            <label for ="productIdentification">Identifying Products</label>
+        </div>
+        <div>
+            <input type="checkbox" name="indoorNavigation" id="indoorNavigation">
+            <label for ="indoorNavigation">indoorNavigation</label>
+        </div>
+        <div>
+            <input type="checkbox" name="colourIdentification" id="colourIdentification">
+            <label for ="colourIdentification">Identifying Colours</label>
+        </div>
+        <div>
+            <input type="checkbox" name="internetAccess" id="internetAccess">
+            <label for ="internetAccess">Accessing the Internet</label>
+        </div>
+
+
+        
+    </div>
+    </div>
+
+    <button class = "btn" type="submit">Submit</button>
+    <button class = "btn" type="reset">Reset</button>
+
+</form>
+</div>
+</body>
+<script
+    src = "index.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!--
+
+    <form>
+        <p> Do you have any useful peripheral vision?</p>
+        <input type="radio" name="visionPeripheral" value="yes"> Yes
+        <input type="radio" name="visionPeripheral" value="no"> No
+        <p> Do you have any useful central vision?</p>
+        <input type="radio" name="visionCentral" value="yes"> Yes
+        <input type="radio" name="visionCentral" value="no"> No
+        <input type="button" id="visionButton" value="Test">
+        
+
+    </form>-->
+<!-- Example of screen reader only item -->
+<!--
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+  }-->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name = "viewport" contenet = "width=device-width,initial-scale=1.0">
+    <title>REACT NASA</title>
+    <link rel="stylesheet" href="nasaapir.css">
+</head>
+<body>
+    <header>
+        <h1 id = "title">
+            NASA Daily Photograph
+        </h1>
+    </header>
+    <div id = content-container>
+        <div id = "main-picture-container">
+            <img id = "main-image"/>
+            <p id = main-description></p>
+        </div>
+        <div id="thumbnail-container">
+            <img class = "thumb" id = "up-arrow" alt = "previous image" src = "uparrow.png"/>
+            <div id = thumbnails>
+                <img id = "image1" class = "thumb" alt = "image 1"/>
+                <img id = "image2" class = "thumb" alt = "image 2"/>
+                <img id = "image3" class = "thumb" alt = "image 3"/>
+                <img id = "image4" class = "thumb" alt = "image 4"/>
+                <img id = "image5" class = "thumb" alt = "image 5"/>
+            </div>
+            <img class = "thumb" id = "down-arrow" alt = "next image" src = "downarrow.png"/>
+            
+        </div>
+    </div>
+
+
+
+    <script  defer src="nasaapir.js"></script>
+</body>
+</html>

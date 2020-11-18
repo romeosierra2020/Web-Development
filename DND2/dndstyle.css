@@ -1,0 +1,46 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#buttons_container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.btn {
+    flex-basis: auto;
+    width: 6.5vw;
+    height: 6.5vw;
+    border: solid 2px black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: hotpink;
+
+}
+
+#btnOpt {
+    flex-grow: 10;
+}
+
+#game_container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+canvas {
+    margin: 0px;
+}
+
+#values_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+.value_item {
+    width: 10vw;
+    height: 6.6vh;
+    border: solid 2px black;
+}

@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", function(){
+
+
 //initialise constants
 
 const canvas = document.getElementById('game-screen');
@@ -5,36 +8,24 @@ const ctx = canvas.getContext('2d');
 const NUMBER_CARDS = 52;
 const BTN_CONTAINER = document.getElementById('btn-container');
 
-canvas.height = 400;
-canvas.width = window.innerWidth;
 
 // Initialise variables
-
 let gameOver = false;
 let nextCard = 0;
-let turn = 0;
+let turn = 7;
 let card;
-let timestamp = 0;
-let cardWidth = 100;
-let cardHeight = 150;
+
+
 let cardPositionIndex = 0;
 let changed = false;
-let cardWidth = 0.1 * canvas.width;
-let cardHeight = 0.15 * canvas.width;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight * .8;
 
 // Initialise Arrays
 
-let turnOptions = [["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["", "", "","Reset"]
-                  ];
+let turnOptions = [];
 
-let cardPositionArray = [[0.05 * cancvas.width,0.05 * ,100,150],
+let cardPositionArray = [[50, 50, 100, 150],
                         [160,50,100,150],
                         [270,50,100,150],
                         [380,50,100,150],
@@ -50,18 +41,26 @@ shuffledArray = [];
 let cardArray =    [['2C','2'],['3C','3'],['4C','4'],['5C','5'],['6C','6'],['7C','7'],['8C','8'],['9C','9'],['TC','a'],['JC','b'],['QC','c'],['KC','d'],['AC','e'],
                     ['2D','2'],['3D','3'],['4D','4'],['5D','5'],['6D','6'],['7D','7'],['8D','8'],['9D','9'],['TD','a'],['JD','b'],['QD','c'],['KD','d'],['AD','e'],
                     ['2S','2'],['3S','3'],['4S','4'],['5S','5'],['6S','6'],['7S','7'],['8S','8'],['9S','9'],['TS','a'],['JS','b'],['QS','c'],['KS','d'],['AS','e'],
-                    ['2H','2'],['3H','3'],['4H','4'],['5H','5'],['6H','6'],['7H','7'],['8H','8'],['9H','9'],['TH','a'],['JH','b'],['QH','c'],['KH','d'],['AH','e']];
-for (let i = 0; i < NUMBER_CARDS ; i++) {
+                     ['2S','2'],['3S','3'],['4S','4'],['5S','5'],['6S','6'],['7S','7'],['8S','8'],['9S','9'],['TS','a'],['JS','b'],['QS','c'],['KS','d'],['AS','e']];
+for (let i = 0; i < NUMBER_CARDS; i++) {
     let pos = Math.floor(Math.random()*cardArray.length);
     shuffledArray.push(cardArray[pos]);
     cardArray.splice(pos,1);
-
-}
+    }
+      turnOptions = [["Higher", "Lower", "Change", "Reset"],
+                  ["Higher", "Lower", "Change", "Reset"],
+                  ["Higher", "Lower", "", "Reset"],
+                  ["Higher", "Lower", "", "Reset"],
+                  ["Higher", "Lower", "Change", "Reset"],
+                  ["Higher", "Lower", "", "Reset"],
+                  ["Higher", "Lower", "", "Reset"],
+                  ["", "", "","Reset"]
+                  ];
 }
 //-------------------------------------------------------------------------
 function update() {
 
-console.log(turn);
+
 if(turn == 7) {
   reset();
 
@@ -69,6 +68,7 @@ if(turn == 7) {
 
 
     card = document.getElementById(shuffledArray[nextCard][0]);
+        console.log(card);
     draw(card);
     nextCard+=1;
     turn+=1;
@@ -108,7 +108,6 @@ function selectOption(option) {
 
 function draw(card) {
 
-  
   ctx.drawImage(card,
                 cardPositionArray[cardPositionIndex][0],
                 cardPositionArray[cardPositionIndex][1],
@@ -116,14 +115,10 @@ function draw(card) {
                 cardPositionArray[cardPositionIndex][3]);
 
 }
-/*
-window.addEventListener("click", function(){
-  update();
-});*/
 
 
 
-shuffleCards();
+
 update();
 
 function reset(){
@@ -132,15 +127,7 @@ function reset(){
   cardPositionIndex = 0;
   ctx.clearRect(0,0,canvas.width,canvas.height);
   shuffleCards();
-  turnOptions = [["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "Change", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["Higher", "Lower", "", "Reset"],
-                  ["", "", "","Reset"]
-                  ];
+
  
 
 
@@ -195,3 +182,4 @@ function gameEnd() {
 
 
 }
+});
