@@ -8,8 +8,6 @@ ac.state="running";
 console.log(ac.state);
 
 
-
-
 /*
 
 const MAIN_IMAGE = document.getElementById("main-image");

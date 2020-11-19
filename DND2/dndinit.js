@@ -90,6 +90,9 @@ let count = 0;
 let turn = 0;
 let selection = 0;
 let playerBox = 0;
+let valuesGone = 0;
+let offer = 0;
+let valuesInPlay = [];
 
 GAME_BOARD.width = GAME_WIDTH;
 GAME_BOARD.height = GAME_HEIGHT;
@@ -115,6 +118,14 @@ const GAME_POS = [[BOX_WIDTH*0.2, BOX_HEIGHT*1.4],
                    [BOX_WIDTH*1.4, BOX_HEIGHT*3.8],
                    [BOX_WIDTH*2.6, BOX_HEIGHT*3.8],
                    [BOX_WIDTH*3.8, BOX_HEIGHT*3.8]];
+
+function populateValues () {
+    for(let i =0; i< BOX_VALUES.length; i++) {
+        valuesInPlay[i] = BOX_VALUES[i][0];
+        document.getElementById("value" + i.toString()).innerHTML = BOX_VALUES[i][1];
+    }
+    
+}
 
 class Box {
     constructor(x,y,gameX, gameY,value,letter) {
@@ -165,17 +176,18 @@ class Box {
     }
     open() {
         this.isOpen = true;
+        updateOffer(this.value);
     }
 
 
 }
 function reset() {
     boxOrder = shuffleNumbers(0,9);
-    console.log(BOX_VALUES);
     for(let i=0; i<10 ; i++){
-    box[i] = new Box(INIT_POS[i][0], INIT_POS[i][1], GAME_POS[i][0], GAME_POS[i][1], BOX_VALUES[boxOrder[i]], String.fromCharCode(65+i));
-    box[i].draw();
+        box[i] = new Box(INIT_POS[i][0], INIT_POS[i][1], GAME_POS[i][0], GAME_POS[i][1], BOX_VALUES[boxOrder[i]], String.fromCharCode(65+i));
+        box[i].draw();
     }
+    populateValues();
 }
 function shuffleNumbers(from,to) {
     let tempNums = [];
@@ -223,6 +235,7 @@ function button() {
     else if (turn >0 && turn <9 && box[selection].isOpen == false && selection != playerBox) {
         box[selection].open();
         box[selection].draw();
+
         turn++;
     }
     
@@ -233,5 +246,13 @@ function buttonOpt() {
     if (turn == 0) relocateAnimation();
 }
 
+function updateOffer(value) {
+    let index = valuesInPlay.indexOf(value);
+    valuesInPlay.splice(index, 1);
+    let index2 = Math.floor(valuesInPlay.length/2);
+    offer = Math.floor((valuesInPlay[index2]+valuesInPlay[index2 + 1])/2);
+    console.log(offer);
+
+}
 
 reset();
