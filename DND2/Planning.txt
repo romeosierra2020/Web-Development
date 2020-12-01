@@ -1,0 +1,66 @@
+Reset Game
+
+Turn 0
+Initialise all classes to startGame values
+Shuffle Boxs
+Display 10 Box's on screen
+Display 10 possible values on screen
+Display Action Message on screen
+--> Player Selects Box (playerSelection)
+Update all box's gamePosition[x,y] 
+relocate Box's to game positions
+Update Action Message
+update display.actionMessage
+
+Turn 
+--> Player selects Optionbutton (if turn > 1) or (box to open until selected unopen && not playerSelection)
+Identify Selection
+If box selected:
+    if turn = 9, go to endgaem, routine
+    update option button text
+    update box.isOpen
+    update boxValues.isInPlay
+    update Offer
+    update display offer value
+    update display box opened
+    update display option button text
+    if turn = 8:
+        update Action Message
+        update offer Message to null
+        update offer value to null
+        update display.action Message
+        update display.offer Message
+        update display offer value
+        update display.optionButtonText
+If OptionButton selected:
+    If turn < 9 and dealtAt =0:
+        dealtAt = offer
+        Update Status Message
+        Update Status Value
+        update display status message 
+        update display status value
+    else if turn = 9
+        swap playerSelection for boxInPlay
+        relocate box animation
+        Go to endgame routine
+
+
+Endgame routine
+    open last box
+    open player Selection
+    update dealt at to value in player Selection
+    update status message to FinalScore
+    update status value to final value
+    update display status message
+    update display status value
+    update option button text
+    update option button display
+    --> Player selects reset
+        go to reset game
+
+
+
+
+
+
+

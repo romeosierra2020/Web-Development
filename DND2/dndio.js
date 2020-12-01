@@ -1,21 +1,35 @@
 /*
-function recurse(count = 0) {
-    if (count === 5) return "done";
-    const newCount = count + 1;
-    return recurse((newCount));
+Class InputHandler
+values  
+    Selection
 
-}
-
-const output = recurse();
-console.log(output);
+Methods 
+    identifyInput()
+    set event listeners()
 */
+//import Game from './dndgame.js';
 
-
-function recurse(count, factor) {
+export default class DndIO {
     
-    if(count ===0) return factor;
-    const newFactor = factor * count;
-    count--;
-    return(recurse(count, newFactor));
+
+    
+    //set listeners to call function that returns button clicked
+    setListeners() {
+ // Ascii value of capital A
+        // set event listeners for buttons A thru' J
+        document.addEventListener('click', function(event) {
+            console.log(event.toElement.id);
+        });
+        }
+        
+    
+    // Called from event listeners. Updates game class on selection made.
+    button(event) {
+        const ASCIIA = 65; 
+        //game.playerSelection = selection;
+        console.log(event);
+    }
+
 }
-console.log(recurse(10,1));
+
+

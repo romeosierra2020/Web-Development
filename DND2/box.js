@@ -1,4 +1,58 @@
-export default class Box {
+/*
+
+Class Box
+values
+    label
+    Current Position [x,y]
+    Start Position[x,y]
+    Game Position [x,y]
+    Swap Position [x,y]
+    values
+    isOpen
+Methods
+    update GamePosition(playerSelection)
+    updateSwapPositions(playerSelection)
+    relocate()
+    open()
+    shuffle()
+    display()
+    swapBox()
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*export default class Box {
     constructor(x,y,gameX, gameY,value,letter) {
         this.x = x;
         this.y = y;
@@ -40,3 +94,5 @@ export default class Box {
 
 
 }
+
+*/

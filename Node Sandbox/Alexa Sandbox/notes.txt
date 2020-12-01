@@ -1,0 +1,16 @@
+2 Parts - Build Voice User Interface, Build Skill service
+
+Set up new skill at AWS, 
+
+Invocation
+Intents
+JSON editor
+Goto Endpoint
+
+
+Create Invocation Name - This is the what is called. eg Henshaws - ask henshaws for a fact
+Create Interaction Model - JSON object of JSON Objects
+Create Intents - Intent is the action to be completed by the utterance
+Create sample utterances - these are different phrasings calling the Intent
+Create slots - parameters that are user input variables to be passed to back Endpoint
+ 

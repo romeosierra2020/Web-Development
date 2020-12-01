@@ -1,5 +1,15 @@
+import DndIO from './dndio.js';
 
 
+const input = new DndIO();
+input.setListeners();
+
+
+
+
+/*
+
+Origanal strts here
 const BOX_VALUES = [[.01,   "    1p"],
                     [1,     "    £1"],
                     [10,    "   £10"],
@@ -62,9 +72,12 @@ BTNJ.addEventListener("click", function(){
 });
 const BTN_OPT = document.getElementById("btnOpt");
 BTN_OPT.addEventListener("click", function(){
-    console.log("Button Opt");
+    buttonOpt();
 });
 
+const STATUS_MSG = document.getElementById("status_message");
+const STATUS_VAL = document.getElementById("status_value");
+const ACTION_MSG = document.getElementById("action_message");
 
 const COLOR_ACCENT1 = "#EF233C";
 const COLOR_ACCENT2 = "#8D99A";
@@ -93,6 +106,8 @@ let playerBox = 0;
 let valuesGone = 0;
 let offer = 0;
 let valuesInPlay = [];
+let dealtAt = 0;
+let swapBox = 0;
 
 GAME_BOARD.width = GAME_WIDTH;
 GAME_BOARD.height = GAME_HEIGHT;
@@ -119,7 +134,7 @@ const GAME_POS = [[BOX_WIDTH*0.2, BOX_HEIGHT*1.4],
                    [BOX_WIDTH*2.6, BOX_HEIGHT*3.8],
                    [BOX_WIDTH*3.8, BOX_HEIGHT*3.8]];
 
-function populateValues () {
+function populateValues() {
     for(let i =0; i< BOX_VALUES.length; i++) {
         valuesInPlay[i] = BOX_VALUES[i][0];
         document.getElementById("value" + i.toString()).innerHTML = BOX_VALUES[i][1];
@@ -128,9 +143,11 @@ function populateValues () {
 }
 
 class Box {
-    constructor(x,y,gameX, gameY,value,letter) {
+    constructor(x,y,initPosX, initPosY,gameX, gameY,value,letter) {
         this.x = x;
         this.y = y;
+        this.initPosX = initPosX;
+        this.initPosY = initPosY;
         this.gameX = gameX;
         this.gameY = gameY;
         this.letter = letter;
@@ -184,10 +201,11 @@ class Box {
 function reset() {
     boxOrder = shuffleNumbers(0,9);
     for(let i=0; i<10 ; i++){
-        box[i] = new Box(INIT_POS[i][0], INIT_POS[i][1], GAME_POS[i][0], GAME_POS[i][1], BOX_VALUES[boxOrder[i]], String.fromCharCode(65+i));
+        box[i] = new Box(INIT_POS[i][0], INIT_POS[i][1],INIT_POS[i][0], INIT_POS[i][1], GAME_POS[i][0], GAME_POS[i][1], BOX_VALUES[boxOrder[i]], String.fromCharCode(65+i));
         box[i].draw();
     }
     populateValues();
+    ACTION_MSG.innerHTML="Pick your Box";
 }
 function shuffleNumbers(from,to) {
     let tempNums = [];
@@ -211,10 +229,13 @@ function relocateAnimation() {
         box[i].gameY = box[i-1].gameY;
         
     }
-        box[selection].gameX = BOX_WIDTH*3.8;
+    box[selection].gameX = BOX_WIDTH*3.8;
     box[selection].gameY = BOX_HEIGHT*3.8;
     count = 0;
     requestAnimationFrame(relocate);
+    STATUS_MSG.innerHTML = "";
+    STATUS_VAL.innerHTML = "";
+    ACTION_MSG.innerHTML = "Which box do you want to remove?"
 }
     
 function relocate(){
@@ -225,25 +246,34 @@ function relocate(){
         box[j].draw();
     }
     if(count < DELAY) requestAnimationFrame(relocate);
+
 }
 function button() {
     if (turn == 0) {
         playerBox = selection;
         relocateAnimation();
         turn++;
+        
     }
-    else if (turn >0 && turn <9 && box[selection].isOpen == false && selection != playerBox) {
+    else if (turn >0 && turn <10 && box[selection].isOpen == false && selection != playerBox) {
+        BTN_OPT.innerHTML="Deal";
         box[selection].open();
         box[selection].draw();
 
         turn++;
     }
+    if(turn === 9) {
+        BTN_OPT.innerHTML = "Swap";
+    }
     
 }
 
 function buttonOpt() {
-    selection = 0;
-    if (turn == 0) relocateAnimation();
+    if(BTN_OPT.innerHTML ==="Deal"){
+        deal();
+    } else if(BTN_OPT.innerHTML === "Swap") {
+        swap();
+    }
 }
 
 function updateOffer(value) {
@@ -251,8 +281,58 @@ function updateOffer(value) {
     valuesInPlay.splice(index, 1);
     let index2 = Math.floor(valuesInPlay.length/2);
     offer = Math.floor((valuesInPlay[index2]+valuesInPlay[index2 + 1])/2);
-    console.log(offer);
+    offer = Math.floor(offer * (.6+(.1*turn)));
+    STATUS_MSG.innerHTML = "Offer: ";
+    STATUS_VAL.innerHTML = offer;
 
 }
 
 reset();
+
+function swap() {
+    let i = 0;
+    for(i = 0; i<box.length; i++) {
+        if(box[i].isOpen === false && i !== playerBox) {
+            swapBox = i;
+            break;
+        }
+    }
+
+    box[swapBox].initPosX = box[swapBox].gameX;
+    box[swapBox].initPosY = box[swapBox].gameY;
+    box[playerBox].initPosX = box[playerBox].gameX;
+    box[playerBox].initPosY = box[playerBox].gameY;
+
+    let tempPosX = box[swapBox].gameX;
+    let tempPosY = box[swapBox].gameY;
+    box[swapBox].gameX = box[playerBox].gameX;
+    box[swapBox].gameY = box[playerBox].gameY;
+    box[playerBox].gameX = tempPosX;
+    box[playerBox].gameY = tempPosY;
+    
+    count = 0;
+    requestAnimationFrame(relocateSwap);
+}
+
+function deal() {
+    dealtAt = STATUS_VAL.innerHTML;
+    STATUS_MSG.innerHTML = "Dealt at " + dealtAt.toString();
+    count = 0;
+
+}
+
+function relocateSwap(){
+    let j = 0;
+    count++;
+    ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
+    j = swapBox;
+    box[j].move([box[j].initPosX,box[j].initPosY], [box[j].gameX,box[j].gameY]);
+    box[j].draw();
+    j = playerBox;
+    box[j].move([box[j].initPosX,box[j].initPosY], [box[j].gameX,box[j].gameY]);
+    box[j].draw();
+    if(count < DELAY) requestAnimationFrame(relocateSwap);
+
+}
+
+*/
