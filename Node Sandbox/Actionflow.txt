@@ -1,27 +1,26 @@
 domain: https:/www.henshaws.org.uk/
-Category page: knowledge-village
-<article class="single-product">
-    <div class="inner">
-        <a href="https://www.henshaws.org.uk/knowledge-village/covid-19/" class="top" 
-                style="background-image:url(https://www.henshaws.org.uk/wp-content/uploads/2020/06/Simon-with-cane-1-419x285.jpg);">
-            <div class="title">
-                <h3 class="text">COVID-19</h3>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </a>
-        <a href="https://www.henshaws.org.uk/knowledge-village/covid-19/" class="description">
-                The COVID-19 pandemic is impacting lives across the globe. Our role is to support those who may be less resilient to a crisis like this, 
-                so we have created some specific content that is designed to help blind and visually impaired people during this challenging time.</a>
-        <div class="bottom"></div>
-    </div>
-</article>
 
 
-<a href="https://www.henshaws.org.uk/shop/blog/visiting-manchester-central-library-post-lockdown-blog/" class="link">
-    <div class="image" aria-hidden="true" style="background-image: url(https://www.henshaws.org.uk/wp-content/uploads/2020/09/PHOTO-2020-09-10-12-07-17-454x286.jpg);">
-    </div>
-    <h3 class="title"><strong>Visiting Manchester Central Library post-lockdown (blog)</strong></h3>
-    <div class="description">We offer digital technology assessments at Manchester Central Library, 
-                so we went along to check out what's changed at the building since the COVID-19 lockdown.
-    </div>
-</a>
+Ultimate destination: Parsed Blog Page
+
+
+https:/www.henshaws.org.uk/ - 1st HTTP Request
+    Identifies Category Text and Category URL
+    Returns array of 12 options
+
+    /CATEGORY/
+
+        Identify Blog Titles and URLs
+        Return array
+
+    /Blog Summary/
+
+        Identify Introduction and URL
+
+    /Blog Text/
+
+        Parse Blog Text for Alexa
+            Parse <p>...</p> elements
+            remove <a href="...."> from array
+
+

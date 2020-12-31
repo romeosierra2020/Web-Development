@@ -5,6 +5,8 @@ const elementRe = new RegExp('(<article)[^>]*>(.*?)(<\/article>)','g');
 const URLRe1 = new RegExp('https[^\"]*');
 const categoryRe2 = new RegExp('text[^<]*');
 const elementBlogRE = new RegExp('(https[^\"]*-blog)','g');
+const BLOG_PARSE_RE = new RegExp('<p>[A-Z]+(.*?)<\/p>','g');
+
 
 
 
@@ -30,8 +32,20 @@ xhr.onload = function() {
                 xhr2.open('GET',parsedBlogUrls[0], true);
                 xhr2.onload = function() {
                     if(xhr2.status === 200) {
-                        console.log('Blog....');
-                    }
+                            let parsedBlogIntros = parseBlogIntros(xhr2.responseText);
+                            let xhr3 = new XMLHttpRequest();
+                            xhr2.open('GET',parsedBlogUrls[0], true);
+                            xhr2.onload = function() {
+                                if(xhr2.status === 200) {
+                                    console.log('Blog....');
+                                }
+                                else {
+                                    // Parse Blog Page
+                                    console.log(xhr2.status);
+                                }
+                            }
+                            xhr2.send();
+                        }
                     else {
                         // Parse Blog Page
                         console.log(xhr2.status);

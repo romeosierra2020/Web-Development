@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Train : Fetch Data API's 1</title>
+</head>
+<body>
+    <img src="" id="party" width = 480/>
+    <script>
+
+        async function catchParty() {
+            const response = await fetch('androidparty.jpg');
+            const blob = await response.blob();
+            document.getElementById("party").src = URL.createObjectURL(blob);            
+        }
+        catchParty().catch(error => {
+            console.log(error);
+        });   
+    </script>
+</body>
+</html>

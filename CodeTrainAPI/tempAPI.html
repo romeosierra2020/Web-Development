@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Global temperatures</title>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js'></script>
+</head>
+<body>
+    <canvas id='myChart' width="400" height = "400"></canvas>
+    <script>
+        // Info from https://data.giss.nasa.gov/gistemp/
+        async function getData() {
+            const response = await fetch('ZonAnn.Ts+dSST.csv');
+            const data = await response.text();
+            console.log(data);
+            const table = data.split('\n').slice(2);
+            table.forEach(row => {
+                const columns = row.split(',');
+                const year = columns[0];
+                xLabels.push(year);
+                const temp = 14+ parseFloat(columns[1]) ;
+                processedData.push(temp);
+                console.log('temp',temp,'year',year);
+            });
+
+        }
+        const xLabels = [];
+        const processedData = [];        
+        chartIt();
+        async function chartIt() {
+            await getData();
+            const ctx = document.getElementById('myChart').getContext('2d');
+
+            const  myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xLabels,
+                    datasets: [{
+                        label: 'Global Average Temperature',
+                        data: processedData,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+    </script>
+    
+</body>
+</html>

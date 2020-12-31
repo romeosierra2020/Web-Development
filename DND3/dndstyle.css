@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #EDF2F4;
+}
+
+#buttons_container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.btn {
+    flex-basis: auto;
+    width: 6.5vw;
+    height: 6.5vw;
+    border: solid 2px black;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 6vw;
+    background-color: hotpink;
+    font-size: 4vw;
+
+}
+
+#btnOpt {
+    flex-grow: 10;
+}
+
+#game_container {
+
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 66vh;
+}
+canvas {
+    margin: 0px;
+    width: 65vw;
+    height: 100%;
+    background-color: #EDF2F4;
+}
+
+#status_container {
+    text-align: center;
+    background-color: #EDF2F4;
+    margin: auto;
+    width: 25vw;
+    height: 100%;
+}
+
+#values_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 10vw;
+    height: 66vh;
+}
+
+
+.value_item {
+    width: 10vw;
+    height: 6.6vh;
+    border: solid 2px black;
+    border-radius: 5px;
+    line-height: 4vw;
+    font-size: 2vw;
+    text-align: center;
+
+
+}
+
+.value-item-low {
+    background-color: #04D7B4;
+}
+
+.value-item-high {
+    background-color: #FC7188;
+}
+
+.message {
+    display: block;
+    width: 100%;
+}

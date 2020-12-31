@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.box {
+    flex
+    border: 2px solid black;
+}
+
+#box2 {
+    flex-grow: 2;
+}
+
+#box4 {
+    flex-grow: 2;
+}

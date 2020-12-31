@@ -1,0 +1,21 @@
+$primaryBtn: rgb(56, 146, 142);
+$teaxtColor: grey;
+
+header {
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    color: $teaxtColor;
+    button {
+        background: $primaryBtn;
+        &:hover {
+            background: red;
+        }
+    }
+}
+
+
+
+ .contact button {
+     background: $primaryBtn;
+ }

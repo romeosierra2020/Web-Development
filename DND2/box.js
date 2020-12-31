@@ -1,25 +1,49 @@
-/*
 
-Class Box
-values
-    label
-    Current Position [x,y]
-    Start Position[x,y]
-    Game Position [x,y]
-    Swap Position [x,y]
-    values
-    isOpen
-Methods
-    update GamePosition(playerSelection)
-    updateSwapPositions(playerSelection)
-    relocate()
-    open()
-    shuffle()
-    display()
-    swapBox()
+export default class Box {
+    constructor(label, posX, posY, gamePosX, gamePosY, value) {
+        this.label = label;
+        this.posX = posX;
+        this.posY = posY;
+        this.startPosX = posX;
+        this.startPosY = posY;
+        this.gamePosX = gamePosX;
+        this.gamePosY = gamePosY;
+        this.swapPosX = gamePosX;
+        this.swapPosY = gamePosY;
+        this.value = value;
+        this.isOpen = false;
+    }
+    reset(label, posX, posY, gamePosX, gamePosY, value) {
+        this.label = label;
+        this.posX = posX;
+        this.posY = posY;
+        this.startPosX = posX;
+        this.startPosY = posY;
+        this.gamePosX = gamePosX;
+        this.gamePosY = gamePosY;
+        this.swapPosX = gamePosX;
+        this.swapPosY = gamePosY;
+        this.value = value;
+        this.isOpen = false;
+    }
 
-    */
+    draw(display,game, values) {
+        if(this.isOpen == true) {
+            display.renderOpenBox(this,game, values);
 
+        }
+        display.renderBox(this,game);
+    
+        /*// draw bottom of box.
+ */
+    }
+
+    move(from, to, game){
+        this.posX = this.posX + (to[0]-from[0])/game.DELAY;
+        this.posY = this.posY + (to[1]-from[1])/game.DELAY;
+    
+    }
+}
 
 
 

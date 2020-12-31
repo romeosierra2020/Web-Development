@@ -1,15 +1,89 @@
 import DndIO from './dndio.js';
+import DndGame from './dndgame.js';
+import BoxValues from './boxvalues.js';
+import Box from './box.js';
+import Display from './dnddisp.js';
+export {}
+export let box = [];
 
 
-const input = new DndIO();
-input.setListeners();
+//Pre Game Initialisation
+export const game = new DndGame();
+export const values = new BoxValues();
+const input = new DndIO(game);
+export const display = new Display(game);
+export const INIT_POS = [[game.BOX_WIDTH*2, game.BOX_HEIGHT*0.2],
+                   [game.BOX_WIDTH*1.4, game.BOX_HEIGHT*1.4],
+                   [game.BOX_WIDTH*2.6, game.BOX_HEIGHT*1.4],
+                   [game.BOX_WIDTH*0.8, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*2, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*3.2, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*0.2, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*1.4, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*2.6, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*3.8, game.BOX_HEIGHT*3.8]];
+
+export const GAME_POS = [[game.BOX_WIDTH*0.2, game.BOX_HEIGHT*1.4],
+                   [game.BOX_WIDTH*1.4, game.BOX_HEIGHT*1.4],
+                   [game.BOX_WIDTH*2.6, game.BOX_HEIGHT*1.4],
+                   [game.BOX_WIDTH*0.2, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*1.4, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*2.6, game.BOX_HEIGHT*2.6],
+                   [game.BOX_WIDTH*0.2, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*1.4, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*2.6, game.BOX_HEIGHT*3.8],
+                   [game.BOX_WIDTH*3.8, game.BOX_HEIGHT*3.8]];
+
+gameLoop();
+
+// Game Loop
+
+export function gameLoop() {
+    // Initialise Round
+    game.reset();
+    display.reset(game);
+    values.reset();
+    values.display(display);
+
+    // shuffle box values
+    box = [];
+    let shuffledNumbers = game.shuffleNumbers(0,9);
+    for(let i=0; i<10 ; i++){
+        box[i] = new Box(String.fromCharCode(65+i), INIT_POS[i][0], INIT_POS[i][1], GAME_POS[i][0], GAME_POS[i][1], shuffledNumbers[i]);
+        box[i].draw(display, game, values);
+    }
+    display.renderMessages(game);
+    game.gameStatus = 'In Play';
+    gamePlay();
+    if(game.gameStatus === 'GameOver') {
+        gameLoop();
+    }
+}
+
+
+function gamePlay() {
+
+
+    // Base case Game Status != Game Over
+    // Await Input
+
+    // Act On Input
+
+    // Update Game
+
+    //Update Display
+
+    //loop
+
+    
+}
 
 
 
 
 /*
 
-Origanal strts here
+Original strts here
 const BOX_VALUES = [[.01,   "    1p"],
                     [1,     "    £1"],
                     [10,    "   £10"],

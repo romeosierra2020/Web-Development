@@ -9,6 +9,8 @@
   "author": "Rick",
   "license": "ISC",
   "dependencies": {
+    "document": "^0.4.7",
+    "domparser": "^0.1.1",
     "uuid": "^8.3.1",
     "xmlhttprequest": "^1.8.0"
   },

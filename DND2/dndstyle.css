@@ -15,6 +15,7 @@ body {
     border: solid 2px black;
     border-radius: 5px;
     text-align: center;
+    line-height: 6vw;
     background-color: hotpink;
     font-size: 4vw;
 
@@ -35,6 +36,13 @@ canvas {
     margin: 0px;
 }
 
+#status_container {
+    text-align: center;
+    background-color: #EDF2F4;
+    margin: 0px;
+    flex-grow: 100;
+}
+
 #values_container {
     display: flex;
     flex-direction: column;
@@ -46,7 +54,10 @@ canvas {
     width: 10vw;
     height: 6.6vh;
     border: solid 2px black;
+    border-radius: 5px;
+    line-height: 4vw;
     font-size: 2vw;
+    text-align: center;
 
 
 }
