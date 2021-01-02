@@ -1,9 +1,12 @@
-const EventEmitter = require('events');
-const eventEmitter = new EventEmitter();
-console.log(eventEmitter);
-eventEmitter.on('tutorial', ()=> {
-    console.log('Event Occured');
+const net = require('net');
+const server = net.createServer();
+server.listen({
+    host: 'localhost',
+    port: 8080
 });
 
+server.on('connection', (client) => {
+    console.log('client connected');
+    client.write('Welcome to the connection');
+});
 
-eventEmitter.emit('tutorial');
